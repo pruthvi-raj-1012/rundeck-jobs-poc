@@ -1,0 +1,17 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: aa58484c-c0aa-4ce8-ab1d-6dce5f4ed98c
+  loglevel: INFO
+  name: job-2
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: null
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - exec: echo "Hello world again"
+    keepgoing: false
+    strategy: node-first
+  uuid: aa58484c-c0aa-4ce8-ab1d-6dce5f4ed98c
+
