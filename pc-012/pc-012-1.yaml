@@ -1,0 +1,18 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: d37f61ed-e846-4e43-a33f-68c5358c426b
+  loglevel: INFO
+  name: pc-012-1
+  nodeFilterEditable: false
+  plugins:
+    ExecutionLifecycle: null
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - description: Hello world
+      exec: echo "Hello World"
+    keepgoing: false
+    strategy: node-first
+  uuid: d37f61ed-e846-4e43-a33f-68c5358c426b
+
