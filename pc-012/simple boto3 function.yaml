@@ -19,13 +19,20 @@
   scheduleEnabled: true
   sequence:
     commands:
-    - script: "#!/usr/bin/env python3\n\nimport boto3\nfrom botocore.exceptions import\
-        \ ClientError\n\ns3 = boto3.client('s3', \n    aws_access_key_id='ASIAZBXCTV2P5FXBGN5G',\n\
-        \    aws_secret_access_key='tewA9ziX+i14khuJp5EbqHvl+n6khBfCCol0Ml7j',\n \
-        \   aws_session_token='IQoJb3JpZ2luX2VjEBkaCXVzLWVhc3QtMSJHMEUCIQDmzyM2+82zu2526A8QYBFTAfm9khTI6lrVzelIFnCd6gIgJ/EFR+UF4tP2kOBsKj4W53S4vDnQtEKYrnl3ieU5HAUqwwIIUhACGgw2MjIxNzE3NjIzMzUiDCGelbBMEXtyn4DiHSqgAgyS/niLEs/dEFXY44sFq0atjB3w3Py5V2Cs5A+V7yGvPGC7Xm54tGk6gdYknXtcLJr8vxlEbG6Ef6oNXNPgbnF2G/ZB/G4/8DZRGhdZAF7esBSMsoQO3rPqgxER9Layo8eSeWMbTNCVUy4fWeVsGjr2PgBSTrigJMX+0qVW0X3OWYCozbYMTNrNtNYCclrc6esHA976AaImrSvxIjgKFud9z2xX6Ca6K4d75QyAH8nUlm9+Rhmd2J5rMUltVdsaRkFpS23jZE3DUCHts+Fn/S26eowvC1Fya29bNgrmder7TV2uiAVFv5ZZOQPimYvx+KZIldPbDZPy1dMRVeLM1bRdGFdbd7bQLwikqI58q7Q5qEZ2fiIQYc1uasf7yKG5xjDsq+ePBjqbAUd/pv/ddaiWgnkAjKMgmdM0dMtUIYJ/MdLt+NwhVRno9MY43eeMacOz+i1+stCcndQd42tijf+inNuT5bwotmKNMfOf1fw09kcL8CzICYYcR99CybG16jnhI9dTF32qV4S40TlfDRWq5HPTvzCmT/mSD1Q6ZvQdJO+hh7wuWgXKxKZv+UnlTY1R6YguNfRvebaowrIV7dCsmyaw'\n\
-        )\n\nresponse = s3.list_buckets()\n\n# Output the bucket names\nprint('Existing\
-        \ buckets:')\nfor bucket in response['Buckets']:\n    print(f'  {bucket[\"\
-        Name\"]}')"
+    - script: |-
+        #!/usr/bin/env python3
+
+        import boto3
+        from botocore.exceptions import ClientError
+
+        s3 = boto3.client('s3')
+
+        response = s3.list_buckets()
+
+        # Output the bucket names
+        print('Existing buckets:')
+        for bucket in response['Buckets']:
+            print(f'  {bucket["Name"]}')
     keepgoing: false
     strategy: node-first
   uuid: 87d8a61e-b1e9-44c1-ab56-644d7c9a7e10
